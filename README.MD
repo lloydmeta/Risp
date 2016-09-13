@@ -1,4 +1,4 @@
-# Risp [![Build Status](https://travis-ci.org/lloydmeta/Risp.svg?branch=master)](https://travis-ci.org/lloydmeta/Risp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.beachape/risp/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beachape/risp)
+# Risp [![Build Status](https://travis-ci.org/lloydmeta/Risp.svg?branch=master)](https://travis-ci.org/lloydmeta/Risp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.beachape/risp_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beachape/risp_2.11)
 
 
 Reduced-Lisp in Scala Processor, Risp, is a simple language/internal DSL
@@ -15,7 +15,7 @@ To scratch an itch, mostly. Also, recently found out that `TailRec` implements
 There are a bunch of examples everywhere on how to implement traditional 
 Lisps in Scala on the internet, and they are usually either dynamically typed,
 compile from non-Scala to Scala, or a combination of both. Risp is different 
-in that it is both implemented and written in Scala.
+in that it is both implemented and written in Scala, and type-safe.
 
 ## Usage
 

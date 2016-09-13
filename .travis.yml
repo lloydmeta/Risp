@@ -1,5 +1,8 @@
 language: scala
 
+scala:
+  - 2.11.8
+
 cache:
   directories:
   - $HOME/.sbt/0.13
@@ -7,6 +10,7 @@ cache:
   - $HOME/.sbt/cache
   - $HOME/.sbt/launchers
   - $HOME/.ivy2
+
 before_cache:
   - du -h -d 1 $HOME/.ivy2/
   - du -h -d 2 $HOME/.sbt/
