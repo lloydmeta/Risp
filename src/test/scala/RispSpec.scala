@@ -1,16 +1,13 @@
-import org.scalatest.{FunSpec, Matchers, OptionValues}
-import OptionValues._
-import risp._
-import dsl._
-import IntOps._
+import org.scalatest.{ FunSpec, Matchers, OptionValues }, OptionValues._
+import risp._, dsl._, IntOps._
 
 import scala.annotation.tailrec
 
 /**
-  * Created by Lloyd on 9/13/16.
-  *
-  * Copyright 2016
-  */
+ * Created by Lloyd on 9/13/16.
+ *
+ * Copyright 2016
+ */
 class RispSpec extends FunSpec with Matchers {
 
   describe("Eval.apply") {
@@ -38,20 +35,20 @@ class RispSpec extends FunSpec with Matchers {
   }
 
   /**
-    * Returns a head-stacked version of the given expression.
-    *
-    * {{{
-    *    stacked(levels = 3, |(Times, 1, 1))
-    *    res14: Expr[Int, Int] = (Times (Times (Times 1 1) 1 1) 1 1)
-    * }}}
-    */
+   * Returns a head-stacked version of the given expression.
+   *
+   * {{{
+   *    stacked(levels = 3, |(Times, 1, 1))
+   *    res14: Expr[Int, Int] = (Times (Times (Times 1 1) 1 1) 1 1)
+   * }}}
+   */
   private def stacked[Arg](levels: Int, expr: Expr[Arg, Arg]): Expr[Arg, Arg] = {
     @tailrec
     def step(current: Int, currentExpr: Expr[Arg, Arg]): Expr[Arg, Arg] = {
       if (current <= 1)
         currentExpr
       else
-        step(current - 1, Expr(expr.func, currentExpr +: expr.terms :_*))
+        step(current - 1, Expr(expr.func, currentExpr +: expr.terms: _*))
     }
     step(levels, expr)
   }
