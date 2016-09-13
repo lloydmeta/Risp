@@ -1,4 +1,5 @@
-# Risp [![Build Status](https://travis-ci.org/lloydmeta/Risp.svg?branch=master)](https://travis-ci.org/lloydmeta/Risp)
+# Risp [![Build Status](https://travis-ci.org/lloydmeta/Risp.svg?branch=master)](https://travis-ci.org/lloydmeta/Risp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.rsql/rsql-parser/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beachape/risp)
+
 
 Reduced-Lisp in Scala Processor, Risp, is a simple language/internal DSL
 written in Scala that aims to be a simplified but type-safe Lisp.
@@ -16,7 +17,6 @@ Lisps in Scala on the internet, and they are usually either dynamically typed,
 compile from non-Scala to Scala, or a combination of both. Risp is different 
 in that it is both implemented and written in Scala.
 
-
 ## Usage
 
 ```scala
@@ -28,4 +28,12 @@ case object ToInt extends BaseFunc[String, Int](_.toInt, (acc, next) => acc * 10
 val expr = Expr(Add, 1, 2, Expr(ToInt, "1", "2")) // => (Add 1 2 (ToInt 1 2))
 val r = Eval(expr)
 assert(r == Some(15))
+```
+
+## SBT
+
+For version, see Maven badge.
+
+```scala
+libraryDependencies += "com.beachape" %% "risp" % version
 ```
