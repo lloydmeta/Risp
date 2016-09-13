@@ -6,7 +6,7 @@ written in Scala that aims to be a simplified but type-safe Lisp.
 I have absolutely no need for something like this, but maybe some brighter minds
 on the internet can have some fun with it.
 
-# Why
+## Why
 
 To scratch an itch, mostly. Also, recently found out that `TailRec` implements
 `map` and `flatMap`, so I wanted to write a stack-safe interpreter (see `risp.Eval`).
@@ -17,7 +17,7 @@ compile from non-Scala to Scala, or a combination of both. Risp is different
 in that it is both implemented and written in Scala.
 
 
-# Usage
+## Usage
 
 ```scala
 import risp._, dsl._, IntOps._
