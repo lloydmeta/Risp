@@ -1,4 +1,4 @@
-# Risp [![Build Status](https://travis-ci.org/lloydmeta/Risp.svg?branch=master)](https://travis-ci.org/lloydmeta/Risp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.rsql/rsql-parser/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beachape/risp)
+# Risp [![Build Status](https://travis-ci.org/lloydmeta/Risp.svg?branch=master)](https://travis-ci.org/lloydmeta/Risp) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.beachape/risp/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beachape/risp)
 
 
 Reduced-Lisp in Scala Processor, Risp, is a simple language/internal DSL
