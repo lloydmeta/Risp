@@ -1,4 +1,4 @@
-# Risp
+# Risp [![Build Status](https://travis-ci.org/lloydmeta/Risp.svg?branch=master)](https://travis-ci.org/lloydmeta/Risp)
 
 Reduced-Lisp in Scala Processor, Risp, is a simple language/internal DSL
 written in Scala that aims to be a simplified but type-safe Lisp.
