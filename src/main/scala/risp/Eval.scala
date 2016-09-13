@@ -24,14 +24,14 @@ object Eval {
       val init: TailRec[Option[A]] = (for {
         a <- elems.headOption
       } yield {
-        tailRecApply(a).map { tc =>
+        tailcall(tailRecApply(a)).map { tc =>
           tc.map(func.init)
         }
       }).getOrElse(done(None))
       elems.drop(1).foldLeft(init) { (tcOptAcc, next) =>
         for {
           optAcc <- tcOptAcc
-          optNext <- tailRecApply(next)
+          optNext <- tailcall(tailRecApply(next))
         } yield {
           for {
             acc <- optAcc

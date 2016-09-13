@@ -13,6 +13,7 @@ package object risp {
   object dsl {
     import scala.language.implicitConversions
     implicit def anyToJust[A](a: A): Just[A] = Just(a)
+    val | = Expr
   }
 
   object IntOps {

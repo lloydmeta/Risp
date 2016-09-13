@@ -25,7 +25,7 @@ import risp._, dsl._, IntOps._
 // declaring a function
 case object ToInt extends BaseFunc[String, Int](_.toInt, (acc, next) => acc * 10 + next.toInt)
 
-val expr = Expr(Add, 1, 2, Expr(ToInt, "1", "2")) // => (Add 1 2 (ToInt 1 2))
+val expr = |(Add, 1, 2, |(ToInt, "1", "2")) // => (Add 1 2 (ToInt 1 2))
 val r = Eval(expr)
 assert(r == Some(15))
 ```

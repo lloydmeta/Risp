@@ -14,11 +14,11 @@ class RispSpec extends FunSpec with Matchers {
 
       case object ToInt extends BaseFunc[String, Int](_.toInt, (acc, next) => acc * 10 + next.toInt)
 
-      val expr = Expr(
+      val expr = |(
         Add, 1, 2,
-        Expr(ToInt, "1", "2"),
-        Expr(Times, 3,
-          Expr(Minus, 4, 1, 1))
+        |(ToInt, "1", "2"),
+        |(Times, 3,
+          |(Minus, 4, 1, 1))
       )
       val r = Eval(expr)
       r.value shouldBe 21
