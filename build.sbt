@@ -4,7 +4,7 @@ version := "1.1"
 
 scalaVersion := "2.11.8"
 
-crossScalaVersions := Seq("2.11.8", "2.12.0-M5")
+crossScalaVersions := Seq("2.11.8", "2.12.0")
 
 organization := "com.beachape"
 
@@ -30,18 +30,22 @@ pomExtra := (
         <url>https://beachape.com</url>
       </developer>
     </developers>
-  )
+)
 
-publishTo <<= version { v =>
+publishTo := {
   val nexus = "https://oss.sonatype.org/"
-  if (v.trim.endsWith("SNAPSHOT"))
+  if (version.value.trim.endsWith("SNAPSHOT"))
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
-    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+    Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
 publishMavenStyle := true
 
 publishArtifact in Test := false
 
-pomIncludeRepository := { _ => false }
+pomIncludeRepository := { _ =>
+  false
+}
+
+reformatOnCompileSettings
